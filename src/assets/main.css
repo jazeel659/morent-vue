@@ -31,5 +31,20 @@
     unicode-range: U+000-5FF;
     src: url("./fonts/Jakarta/PlusJakartaSans-Bold.woff2") format("woff2"), url("./fonts/Jakarta/PlusJakartaSans-Bold.woff") format("woff");
 }
-
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 200;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("./fonts/Jakarta/PlusJakartaSans-ExtraLight.woff2") format("woff2"), url("./fonts/Jakarta/PlusJakartaSans-ExtraLight.woff") format("woff");
+}
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 800;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("./fonts/Jakarta/PlusJakartaSans-ExtraBold.woff2") format("woff2"), url("./fonts/Jakarta/PlusJakartaSans-ExtraBold.woff") format("woff");
+}
 
