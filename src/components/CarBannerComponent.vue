@@ -36,44 +36,46 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .ad-banner {
   background-color: #5caffc;
   padding: 24px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-}
-.ad-text-wrapper {
-  max-width: 280px;
-  font-family: "Plus Jakarta Sans";
-  color: white;
-}
-.ad-text-wrapper h1 {
-  font-weight: 600;
-  font-size: 32px;
-  font-style: normal;
-  line-height: 120%;
-}
-.ad-text-wrapper p {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 160%;
-  margin-top: 16px;
-}
-.ad-banner .ad-text-wrapper button {
-  background: #3563e9;
-  border-radius: 4px;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border: none;
-  outline: none;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-}
-.ad-banner img {
-  align-self: center;
+  .ad-text-wrapper {
+    max-width: 280px;
+    font-family: "Plus Jakarta Sans";
+    color: white;
+    h1 {
+      font-weight: 600;
+      font-size: 32px;
+      font-style: normal;
+      line-height: 120%;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 160%;
+      margin-top: 16px;
+    }
+    button {
+      background: #3563e9;
+      border-radius: 4px;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      outline: none;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  img {
+    align-self: center;
+  }
 }
 </style>

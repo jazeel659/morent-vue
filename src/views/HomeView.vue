@@ -24,24 +24,23 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 main {
   padding: 32px 64px;
-}
-.banners {
-  display: flex;
-  column-gap: 32px;
-}
-.banners .ad-banner {
-  flex: 1;
-}
-@media only screen and (max-width: 1200px) {
-  .banners .ad-banner:last-child {
-    display: none;
+
+  .banners {
+    display: flex;
+    column-gap: 32px;
+    .ad-banner {
+      flex: 1;
+      &:last-child {
+        @media only screen and (max-width: 1200px) {
+          display: none;
+        }
+      }
+    }
   }
-}
-@media only screen and (max-width: 768px) {
-  main {
+  @media only screen and (max-width: 768px) {
     padding: 32px 24px;
   }
 }
