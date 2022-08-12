@@ -1,17 +1,40 @@
 <template>
-  <div class="ad-banner">
+  <div class="ad-banner" :style="{ backgroundColor: backgroundColor }">
     <div class="ad-text-wrapper">
-      <h1>The Best Platform for Car Rental</h1>
-      <p>
-        Ease of doing a car rental safely and reliably. Of course at a low
-        price.
-      </p>
-      <button>Rental Car</button>
+      <h1>{{ title }}</h1>
+      <p>{{ subTitle }}</p>
+      <button :style="{ backgroundColor: buttonColor }">
+        {{ buttonText }}
+      </button>
     </div>
-    <img src="@/assets/cars/koenigsegg-banner.png" alt="" />
+    <img :src="imagePath" alt="" />
   </div>
 </template>
 <script>
+export default {
+  props: {
+    title: String,
+    subTitle: String,
+    buttonText: {
+      type: String,
+      default: "Rental Car",
+    },
+    buttonColor: {
+      type: String,
+      default: "#3563e9",
+    },
+    backgroundColor: {
+      type: String,
+      default: "#5caffc",
+    },
+    imageName: String,
+  },
+  computed: {
+    imagePath() {
+      return new URL("../assets/cars/" + this.imageName, import.meta.url);
+    },
+  },
+};
 </script>
 <style scoped>
 .ad-banner {
@@ -19,14 +42,17 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
 }
 .ad-text-wrapper {
+  max-width: 280px;
   font-family: "Plus Jakarta Sans";
   color: white;
 }
 .ad-text-wrapper h1 {
   font-weight: 600;
   font-size: 32px;
+  font-style: normal;
   line-height: 120%;
 }
 .ad-text-wrapper p {
