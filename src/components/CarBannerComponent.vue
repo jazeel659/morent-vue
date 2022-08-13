@@ -45,7 +45,7 @@ export default {
   border-radius: 10px;
   .ad-text-wrapper {
     max-width: 280px;
-    font-family: "Plus Jakarta Sans";
+    font-family: "Plus Jakarta Sans", serif;
     color: white;
     h1 {
       font-weight: 600;
