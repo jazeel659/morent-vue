@@ -4,12 +4,12 @@
       <car-banner-component
         title="The Best Platform for Car Rental"
         subTitle="Ease of doing a car rental safely and reliably. Of course at a low price."
-        imageName="koenigsegg-banner.png"
+        imageName="banners/koenigsegg-banner.png"
       />
       <car-banner-component
         title="Easy way to rent a car at a low price"
         subTitle="Providing cheap car rental services and safe and comfortable facilities."
-        imageName="nissangt-banner.png"
+        imageName="banners/nissangt-banner.png"
         backgroundColor="#3563E9"
         buttonColor="#5CAFFC"
       />

@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     imagePath() {
-      return new URL("../assets/cars/" + this.imageName, import.meta.url);
+      return import.meta.env.VITE_SUPABASE_STORAGE_BUCKET_URL + this.imageName;
     },
   },
 };

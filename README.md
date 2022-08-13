@@ -33,3 +33,14 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Supabase ENV variables
+
+create .env file and add the following variables
+
+```sh
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+VITE_SUPABASE_STORAGE_BUCKET_URL=
+
+```
