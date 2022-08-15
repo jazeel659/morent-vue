@@ -31,10 +31,7 @@ export default {
   },
   computed: {
     imagePath() {
-      return (
-        "https://shdpulcngtwftcoynjgp.supabase.co/storage/v1/object/public/morent" +
-        this.imageName
-      );
+      return import.meta.env.VITE_SUPABASE_STORAGE_BUCKET_URL + this.imageName;
     },
   },
 };
