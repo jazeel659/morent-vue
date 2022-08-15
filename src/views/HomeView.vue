@@ -53,6 +53,7 @@ main {
     margin-top: 20px;
     display: flex;
     column-gap: 32px;
+    overflow: auto;
   }
 
   @media only screen and (max-width: 768px) {

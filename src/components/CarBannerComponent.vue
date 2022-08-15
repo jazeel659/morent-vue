@@ -76,6 +76,10 @@ export default {
 
   img {
     align-self: center;
+    @media only screen and (max-width: 768px) {
+      width: 270px;
+      margin-top: 20px;
+    }
   }
 }
 </style>
