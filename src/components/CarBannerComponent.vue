@@ -31,7 +31,10 @@ export default {
   },
   computed: {
     imagePath() {
-      return new URL("../assets/cars/" + this.imageName, import.meta.url);
+      return (
+        "https://shdpulcngtwftcoynjgp.supabase.co/storage/v1/object/public/morent" +
+        this.imageName
+      );
     },
   },
 };
