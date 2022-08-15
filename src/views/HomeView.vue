@@ -14,19 +14,28 @@
         buttonColor="#5CAFFC"
       />
     </div>
+    <div class="card-wrapper">
+      <CarCardComponent :isFavorite="true"></CarCardComponent>
+      <CarCardComponent :isFavorite="false"></CarCardComponent>
+      <CarCardComponent :isFavorite="true"></CarCardComponent>
+      <CarCardComponent :isFavorite="true"></CarCardComponent>
+    </div>
   </main>
 </template>
 <script>
 import CarBannerComponent from "../components/CarBannerComponent.vue";
+import CarCardComponent from "../components/CarCardComponent.vue";
 export default {
   components: {
     CarBannerComponent,
+    CarCardComponent,
   },
 };
 </script>
 <style scoped lang="scss">
 main {
   padding: 32px 64px;
+  background-color: #f6f7f9;
 
   .banners {
     display: flex;
@@ -40,6 +49,12 @@ main {
       }
     }
   }
+  .card-wrapper {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 32px;
+  }
+
   @media only screen and (max-width: 768px) {
     padding: 32px 24px;
   }
