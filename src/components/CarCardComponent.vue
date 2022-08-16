@@ -2,23 +2,23 @@
   <div class="card-container">
     <div class="title-wrapper">
       <div>
-        <h1 class="black-font">Koenigsegg</h1>
-        <span>Sport</span>
+        <h1 class="black-font">{{ carName }}</h1>
+        <span>{{ type }}</span>
       </div>
 
       <Icon class="icon" :icon="favoriteIconStatus" />
     </div>
-    <img class="car" src="../assets/cars/koenigsegg.png" alt="" />
+    <img class="car" :src="imagePath" alt="" />
     <div class="specification-container">
-      <div class="mileage">
+      <div class="specificaion-item">
         <Icon icon="fluent:gas-pump-20-filled" />
         <span>90L</span>
       </div>
-      <div class="mode">
+      <div class="specificaion-item">
         <Icon icon="icon-park-outline:steering-wheel" />
         <span>Manual</span>
       </div>
-      <div class="capacity">
+      <div class="specificaion-item">
         <Icon icon="fluent:people-12-filled" />
         <span> 2 People</span>
       </div>
@@ -44,6 +44,9 @@ export default {
       type: Boolean,
       default: false,
     },
+    imageName: String,
+    carName: String,
+    type: String,
   },
   computed: {
     favoriteIconStatus() {
@@ -51,16 +54,22 @@ export default {
         ? "ant-design:heart-filled"
         : "ant-design:heart-outlined";
     },
+    imagePath() {
+      return import.meta.env.VITE_SUPABASE_STORAGE_BUCKET_URL + this.imageName;
+    },
   },
 };
 </script>
 <style scoped>
 .card-container {
   height: 388px;
+  min-width: 300px;
   background-color: white;
   padding: 24px;
   border-radius: 10px;
   color: #90a3bf;
+  display: flex;
+  flex-direction: column;
 }
 
 .title-wrapper {
@@ -76,28 +85,30 @@ export default {
 }
 
 .title-wrapper div h1 {
-  size: 20px;
+  font-size: 20px;
   line-height: 30px;
 }
 .title-wrapper div span {
-  size: 14px;
+  font-size: 14px;
   line-height: 21px;
+  font-weight: 600;
 }
 .title-wrapper .icon {
-  color: red;
+  color: #ed3f3f;
   font-size: 28px;
 }
-.mileage {
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
-}
+
 .specification-container {
   display: flex;
   position: static;
   margin-top: 37px;
   column-gap: 15px;
   color: #90a3bf;
+}
+.specificaion-item {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
 }
 .specification-container span {
   font-family: "Plus Jakarta Sans";
@@ -107,22 +118,7 @@ export default {
   line-height: 18px;
   color: #90a3bf;
 }
-.capacity {
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
-}
-.mode {
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
-}
 
-.persons {
-  display: flex;
-  align-items: center;
-  grid-column-gap: 8px;
-}
 .price-container {
   display: flex;
   align-items: center;
@@ -141,10 +137,12 @@ button {
   border-radius: 4px;
   padding: 10px 20px;
   color: white;
-  width: 100px;
+  font-weight: 600;
 }
 .car {
   margin-top: 64px;
+  height: 72px;
+  align-self: center;
 }
 .black-font {
   color: black;
