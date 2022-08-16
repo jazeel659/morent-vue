@@ -2,7 +2,7 @@
   <div class="card-container">
     <div class="title-wrapper">
       <div>
-        <h1>Koenigsegg</h1>
+        <h1 class="black-font">Koenigsegg</h1>
         <span>Sport</span>
       </div>
 
@@ -25,8 +25,9 @@
     </div>
     <div class="price-container">
       <div class="price-wrapper">
-        <p class="discounted-price">$99.00/<span>day</span></p>
-        <p class="actual-price">$100.00/</p>
+        <span class="discounted-price black-font">$99.00/</span>
+        <span>day</span>
+        <p class="actual-price">$100.00</p>
       </div>
       <button>Rent Now</button>
     </div>
@@ -59,16 +60,15 @@ export default {
   background-color: white;
   padding: 24px;
   border-radius: 10px;
+  color: #90a3bf;
 }
 
 .title-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
-icon {
-  font-size: 15px;
-}
+
 .title-wrapper div {
   display: flex;
   flex-direction: column;
@@ -82,6 +82,10 @@ icon {
 .title-wrapper div span {
   size: 14px;
   line-height: 21px;
+}
+.title-wrapper .icon {
+  color: red;
+  font-size: 28px;
 }
 .mileage {
   display: flex;
@@ -129,6 +133,7 @@ icon {
 }
 .price-wrapper div:first-child {
   display: flex;
+  font-weight: bold;
 }
 button {
   border: none;
@@ -141,6 +146,11 @@ button {
 .car {
   margin-top: 64px;
 }
-.normal {
+.black-font {
+  color: black;
+  font-weight: bold;
+}
+.actual-price {
+  text-decoration: line-through;
 }
 </style>
