@@ -1,9 +1,12 @@
 <template>
   <div class="card-container">
     <div class="title-wrapper">
-      <h1>Koenigsegg</h1>
-      <span>Sport</span>
-      <Icon :icon="favoriteIconStatus" />
+      <div>
+        <h1>Koenigsegg</h1>
+        <span>Sport</span>
+      </div>
+
+      <Icon class="icon" :icon="favoriteIconStatus" />
     </div>
     <img class="car" src="../assets/cars/koenigsegg.png" alt="" />
     <div class="specification-container">
@@ -55,6 +58,30 @@ export default {
   height: 388px;
   background-color: white;
   padding: 24px;
+  border-radius: 10px;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+icon {
+  font-size: 15px;
+}
+.title-wrapper div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title-wrapper div h1 {
+  size: 20px;
+  line-height: 30px;
+}
+.title-wrapper div span {
+  size: 14px;
+  line-height: 21px;
 }
 .mileage {
   display: flex;
@@ -63,8 +90,8 @@ export default {
 }
 .specification-container {
   display: flex;
-  position: absolute;
-  top: 180px;
+  position: static;
+  margin-top: 37px;
   column-gap: 15px;
   color: #90a3bf;
 }
@@ -76,7 +103,7 @@ export default {
   line-height: 18px;
   color: #90a3bf;
 }
-.persons {
+.capacity {
   display: flex;
   align-items: center;
   column-gap: 8px;
@@ -84,78 +111,21 @@ export default {
 .mode {
   display: flex;
   align-items: center;
+  column-gap: 8px;
 }
-.cir {
-  display: flex;
-  position: relative;
-  align-items: center;
-  width: 22px;
-}
-.mode .cir-1 {
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border-radius: 10px;
-  position: absolute;
-  left: 1px;
-}
-.mode .cir-2 {
-  width: 16px;
-  height: 16px;
-  background-color: #90a3bf;
-  border-radius: 8px;
-  position: absolute;
-  left: 2px;
-}
-.mode .cir-3 {
-  width: 12px;
-  height: 12px;
-  background-color: white;
-  border-radius: 6px;
-  position: absolute;
-  left: 4px;
-}
-.mode .cir-4 {
-  width: 8px;
-  height: 8px;
-  background-color: #90a3bf;
-  border-radius: 4px;
-  position: absolute;
-  left: 6px;
-}
-.rec1 {
-  width: 4px;
-  height: 2px;
-  background-color: #90a3bf;
-  position: absolute;
-  left: 3px;
-}
-.rec2 {
-  width: 2px;
-  height: 4px;
-  background-color: #90a3bf;
-  align-self: flex-end;
-  position: absolute;
-  top: 15px;
-  left: 9.5px;
-}
-.rec3 {
-  width: 4px;
-  height: 2px;
-  background-color: #90a3bf;
-  position: absolute;
-  left: 13px;
-}
+
 .persons {
   display: flex;
+  align-items: center;
+  grid-column-gap: 8px;
 }
 .price-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  top: 160px;
-  width: 245px;
+  margin-top: 24px;
+}
+.price-wrapper {
 }
 .price-wrapper div:first-child {
   display: flex;
@@ -167,11 +137,9 @@ button {
   padding: 10px 20px;
   color: white;
   width: 100px;
-  position: absolute;
-  right: 20px;
 }
 .car {
-  position: absolute;
+  margin-top: 64px;
 }
 .normal {
 }
