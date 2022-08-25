@@ -55,7 +55,7 @@ export default {
         : "ant-design:heart-outlined";
     },
     imagePath() {
-      return import.meta.env.VITE_SUPABASE_STORAGE_BUCKET_URL + this.imageName;
+      return this.imageName;
     },
   },
 };
@@ -88,11 +88,13 @@ export default {
   font-size: 20px;
   line-height: 30px;
 }
+
 .title-wrapper div span {
   font-size: 14px;
   line-height: 21px;
   font-weight: 600;
 }
+
 .title-wrapper .icon {
   color: #ed3f3f;
   font-size: 28px;
@@ -105,11 +107,13 @@ export default {
   column-gap: 15px;
   color: #90a3bf;
 }
+
 .specificaion-item {
   display: flex;
   align-items: center;
   column-gap: 4px;
 }
+
 .specification-container span {
   font-family: "Plus Jakarta Sans";
   font-style: normal;
@@ -125,12 +129,14 @@ export default {
   justify-content: space-between;
   margin-top: 24px;
 }
-.price-wrapper {
-}
+
+.price-wrapper {}
+
 .price-wrapper div:first-child {
   display: flex;
   font-weight: bold;
 }
+
 button {
   border: none;
   background-color: #3563e9;
@@ -139,15 +145,18 @@ button {
   color: white;
   font-weight: 600;
 }
+
 .car {
   margin-top: 64px;
   height: 72px;
   align-self: center;
 }
+
 .black-font {
   color: black;
   font-weight: bold;
 }
+
 .actual-price {
   text-decoration: line-through;
 }
