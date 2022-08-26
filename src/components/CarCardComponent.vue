@@ -12,15 +12,15 @@
     <div class="specification-container">
       <div class="specificaion-item">
         <Icon icon="fluent:gas-pump-20-filled" />
-        <span>90L</span>
+        <span>{{ tankCapacity }}L</span>
       </div>
       <div class="specificaion-item">
         <Icon icon="icon-park-outline:steering-wheel" />
-        <span>Manual</span>
+        <span>{{ modeToTitleCase }}</span>
       </div>
       <div class="specificaion-item">
         <Icon icon="fluent:people-12-filled" />
-        <span> 2 People</span>
+        <span>{{ seatingCapacity }} People</span>
       </div>
     </div>
     <div class="price-container">
@@ -47,6 +47,9 @@ export default {
     imageName: String,
     carName: String,
     type: String,
+    tankCapacity: Number,
+    seatingCapacity: Number,
+    mode: String,
   },
   computed: {
     favoriteIconStatus() {
@@ -57,6 +60,14 @@ export default {
     imagePath() {
       return this.imageName;
     },
+    modeToTitleCase() {
+      return this.mode.replace(
+        /\w\S*/g,
+        function (txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+      );
+    }
   },
 };
 </script>
@@ -130,7 +141,6 @@ export default {
   margin-top: 24px;
 }
 
-.price-wrapper {}
 
 .price-wrapper div:first-child {
   display: flex;
