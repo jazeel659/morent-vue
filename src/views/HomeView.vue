@@ -8,9 +8,16 @@
         subTitle="Providing cheap car rental services and safe and comfortable facilities."
         imageName="banners/nissangt-banner.png" backgroundColor="#3563E9" buttonColor="#5CAFFC" />
     </div>
+    <div class="selection-wrapper">
+      <SelectorComponent label="Pick-up" />
+      <SelectorComponent label="Drop-off" />
+
+
+    </div>
     <div class="card-wrapper">
-      <CarCardComponent v-for="car in cars" :isFavorite="true" :imageName="car.img_url" :carName="car.name"
-        :type="car.type" :key="car.id" />
+      <car-card-component v-for="car in cars" :is-favorite="true" :image-name="car.img_url" :car-name="car.name"
+        :type="car.type" :key="car.id" :seating-capacity="car.seating_capacity" :tank-capacity="car.tank_capacity"
+        :mode=car.mode />
     </div>
   </main>
 </template>
@@ -18,10 +25,12 @@
 import CarBannerComponent from "../components/CarBannerComponent.vue";
 import CarCardComponent from "../components/CarCardComponent.vue";
 import supabase from '../supabase';
+import SelectorComponent from "../components/SelectorComponent.vue";
 export default {
   components: {
     CarBannerComponent,
     CarCardComponent,
+    SelectorComponent
   },
   data() {
     return {
