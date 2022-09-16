@@ -9,10 +9,11 @@
         imageName="banners/nissangt-banner.png" backgroundColor="#3563E9" buttonColor="#5CAFFC" />
     </div>
     <div class="selection-wrapper">
-      <SelectorComponent label="Pick-up" />
-      <SelectorComponent label="Drop-off" />
-
-
+      <SelectorComponent label="Pick - Up" />
+      <button class="switch">
+        <Icon icon="octicon:arrow-switch-24" color="white" height="24" width="24" :rotate="1" />
+      </button>
+      <SelectorComponent label="Drop - Off" />
     </div>
     <div class="card-wrapper">
       <car-card-component v-for="car in cars" :is-favorite="true" :image-name="car.img_url" :car-name="car.name"
@@ -26,11 +27,13 @@ import CarBannerComponent from "../components/CarBannerComponent.vue";
 import CarCardComponent from "../components/CarCardComponent.vue";
 import supabase from '../supabase';
 import SelectorComponent from "../components/SelectorComponent.vue";
+import { Icon } from '@iconify/vue';
 export default {
   components: {
     CarBannerComponent,
     CarCardComponent,
-    SelectorComponent
+    SelectorComponent,
+    Icon
   },
   data() {
     return {
@@ -61,6 +64,29 @@ main {
           display: none;
         }
       }
+    }
+  }
+
+  .selection-wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 44px;
+    align-items: center;
+    margin-top: 32px;
+
+    .selector-wrapper {
+      flex: 1;
+    }
+
+    button.switch {
+      width: 60px;
+      height: 60px;
+
+
+      background: #3563E9;
+      border-radius: 10px;
+      border: none;
+      outline: none;
     }
   }
 
